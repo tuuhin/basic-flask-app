@@ -1,0 +1,27 @@
+{%extends 'index.html'%}
+{%block content %}
+<br>
+	{%if user.is_authenticated%}
+		<h1>Welcome {{user.name}}</h1>
+		<br>
+		<div>
+
+		{%for n in note%}
+		<div class="card">
+			<div class="card-header">
+				{{n.title}}
+			</div>
+			<div class="card-body">
+				<h5 >Created at: {{n.date_created}}</h5>
+				<p class="card-text">{{n.body}}</p>
+				<a  href="/update/{{n.id}}" class="btn btn-outline-primary">Update</a>
+				<a  href="/delete-note/{{n.id}}" class="btn btn-outline-danger">Delete</a>
+			</div>
+		</div>
+		<br>
+		{%endfor%}
+	</div>
+	{%else%}
+	<h1>Welcome to The note creator</h1>
+	{%endif%}
+{%endblock%}

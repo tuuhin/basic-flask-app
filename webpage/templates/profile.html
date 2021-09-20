@@ -1,0 +1,31 @@
+{%extends 'index.html'%}
+{%block content%}
+<br>
+<h1>Update Account</h1>
+<form method="POST" >
+    <div class="mb-3">
+      <label for="name" class="form-label">New Name</label>
+      <input type="text" 
+     name="name" value="{{user.name}}" class="form-control"  aria-describedby="emailHelp">
+     <div class="form-text">If found blank name will not be updated</div> 
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">New Email address</label>
+        <input type="email" value="{{user.email}}" name="email" class="form-control"  aria-describedby="emailHelp">
+        <div class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    
+  	<div class="mb-3">
+      <label for="oldpword" class="form-label">Old Password</label>
+      <input type="password" class="form-control" name="oldpword">
+    </div>
+    
+    <div class="mb-3">
+      <label for="pword" class="form-label">Password</label>
+      <input type="password" class="form-control" name="pword">
+      <div  class="form-text">Atleast 5 chars.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+{%endblock%}

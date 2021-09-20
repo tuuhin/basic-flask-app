@@ -1,0 +1,16 @@
+{%extends 'index.html'%}
+{%block content%}
+	<h1>Update Note</h1>
+	<form method="POST">
+		<div class="mb-3">
+	        <label for="newtitle" class="form-label">New title</label>
+	        <input type="text" value="{{note.title}}" name="newtitle" class="form-control" >
+	    </div>
+	  
+	    <div class="mb-3">
+	      <label for="newbody" class="form-label">New Body</label>
+	      <input type="text" value="{{note.body}}" class="form-control" name="newbody">	     
+	    </div>  
+    <button type="submit" class="btn btn-primary">Update</button>
+	</form>
+{%endblock%}
